@@ -6,13 +6,9 @@
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
-body {
-  margin: 0;
-}
-
-.container {
-  margin: 0 auto;
+.page-header {
   display: grid;
-  grid-template-columns: 1fr;
-  font-family: Helvetica, Arial, sans-serif;
+  justify-content: center;
+  color: var(--secondary);
+  background-color: var(--primary);
 }
