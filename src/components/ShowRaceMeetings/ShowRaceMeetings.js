@@ -1,6 +1,16 @@
-const ShowRaceMeetings = ({ raceMeetings }) => {
+const ShowRaceMeetings = ({ raceMeetings, setRaceMeeting }) => {
   const onChange = (event) => {
-    console.log(`A change has been detected! `, event.target);
+    console.log(`A change has been detected! `, event.target.value);
+    raceMeetings.Meetings.forEach((meeting, index) => {
+      if (event.target.value === meeting.VenueName) {
+        console.log(
+          `A match has been made:`,
+          event.target.value,
+          ` Index number: ${index}`
+        );
+        setRaceMeeting(index);
+      }
+    });
   };
 
   return (
