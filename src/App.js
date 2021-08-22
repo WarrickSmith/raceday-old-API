@@ -22,9 +22,7 @@ function App() {
   };
 
   useEffect(() => {
-    console.log(`loading Data....`);
     loadData();
-    console.log(`Data Load Complete!`);
   }, []);
 
   return (
