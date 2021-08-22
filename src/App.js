@@ -26,9 +26,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    if (raceMeetings === null) {
-      console.log(`No race Meetings in raceMeetins variable`);
-    } else {
+    if (raceMeetings != null) {
       console.log(`Updated Races: `, raceMeetings);
       setRaces(raceMeetings.Meetings[raceMeeting].Races);
     }
@@ -42,7 +40,7 @@ function App() {
         setRaceMeeting={setRaceMeeting}
       />
       <ShowRaces races={races} />
-      <button onClick={loadData}>Get Race data</button>
+      <button onClick={loadData}>Re-Load Race Data</button>
     </div>
   );
 }

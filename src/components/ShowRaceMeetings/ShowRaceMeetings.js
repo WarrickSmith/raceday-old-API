@@ -1,5 +1,5 @@
 const ShowRaceMeetings = ({ raceMeetings, setRaceMeeting }) => {
-  const onChange = (event) => {
+  const onMeetingChange = (event) => {
     console.log(`A change has been detected! `, event.target.value);
     raceMeetings.Meetings.forEach((meeting, index) => {
       if (event.target.value === meeting.VenueName) {
@@ -18,7 +18,7 @@ const ShowRaceMeetings = ({ raceMeetings, setRaceMeeting }) => {
       <label htmlFor='meetings'>Todays Races: </label>
 
       {raceMeetings && (
-        <select id='meetings' name='meetings' onChange={onChange}>
+        <select id='meetings' name='meetings' onChange={onMeetingChange}>
           {raceMeetings.Meetings.map((meeting) => (
             <option key={meeting.MeetingId} value={meeting.VenueName}>
               {meeting.VenueName}

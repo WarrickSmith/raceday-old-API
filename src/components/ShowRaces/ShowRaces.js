@@ -6,8 +6,8 @@ const ShowRaces = ({ races }) => {
 
       {races && (
         <select id='races' name='races'>
-          {races.map((race) => (
-            <option key={race.RaceName} value={race.RaceName}>
+          {races.map((race, index) => (
+            <option key={index + race.RaceName} value={race.RaceName}>
               {race.RaceName}
             </option>
           ))}
