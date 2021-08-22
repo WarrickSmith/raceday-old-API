@@ -32,7 +32,7 @@ function App() {
       console.log(`Updated Races: `, raceMeetings);
       setRaces(raceMeetings.Meetings[raceMeeting].Races);
     }
-  }, [raceMeeting]);
+  }, [raceMeeting, raceMeetings]);
 
   return (
     <div className='container'>
