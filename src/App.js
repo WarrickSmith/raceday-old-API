@@ -6,19 +6,19 @@ import PageHeader from './components/PageHeader/PageHeader';
 import getRacing from './Services/getRacing/getRacing.js';
 import ShowRaceMeetings from './components/ShowRaceMeetings/ShowRaceMeetings';
 import ShowRaces from './components/ShowRaces/ShowRaces';
+import getDateString from './Services/getDateString/getDateString';
 
 function App() {
   // define application hooks
   const [raceMeetings, setRaceMeetings] = useState(null);
   const [races, setRaces] = useState(null);
   const [raceMeeting, setRaceMeeting] = useState(0);
+  const [raceString, setRaceString] = useState(getDateString(new Date()));
 
   const loadData = async () => {
-    const newRaceMeetings = await getRacing();
+    const newRaceMeetings = await getRacing(raceString);
     setRaceMeetings(newRaceMeetings);
-    console.log(`newRaceMeetings: `, newRaceMeetings);
     setRaces(newRaceMeetings.Meetings[raceMeeting].Races);
-    console.log(`Races: `, newRaceMeetings.Meetings[raceMeeting].Races);
   };
 
   useEffect(() => {
