@@ -2,11 +2,9 @@ const ShowRaceMeetings = ({ raceMeetings, setRaceMeeting }) => {
   const onMeetingChange = (event) => {
     console.log(`A change has been detected! `, event.target.value);
     raceMeetings.Meetings.forEach((meeting, index) => {
-      if (event.target.value === meeting.VenueName) {
+      if (event.target.value.toString() === meeting.MeetingId.toString()) {
         console.log(
-          `A match has been made:`,
-          event.target.value,
-          ` Index number: ${index}`
+          `A match has been made: ${event.target.value} Index number: ${index}`
         );
         setRaceMeeting(index);
       }
@@ -20,7 +18,7 @@ const ShowRaceMeetings = ({ raceMeetings, setRaceMeeting }) => {
       {raceMeetings && (
         <select id='meetings' name='meetings' onChange={onMeetingChange}>
           {raceMeetings.Meetings.map((meeting) => (
-            <option key={meeting.MeetingId} value={meeting.VenueName}>
+            <option key={meeting.MeetingId} value={meeting.MeetingId}>
               {meeting.VenueName}
             </option>
           ))}
