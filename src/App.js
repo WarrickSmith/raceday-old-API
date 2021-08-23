@@ -15,12 +15,14 @@ function App() {
   const [raceMeeting, setRaceMeeting] = useState(0);
   const [raceString, setRaceString] = useState(getDateString(new Date()));
 
+  // Function to do initial race meeting data load
   const loadData = async () => {
     setRaceString(getDateString(new Date()));
     const newRaceMeetings = await getRacing(raceString);
     setRaceMeetings(newRaceMeetings.RaceDay);
   };
 
+  //Initiate initial data load (once - on page load)
   useEffect(() => {
     loadData();
   }, []);
