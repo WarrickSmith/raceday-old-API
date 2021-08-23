@@ -1,9 +1,10 @@
-const getRacing = async () => {
+const getRacing = async (raceString) => {
   const response = await fetch(
-    `https://api.tatts.com/svc/sales/vmax/web/data/racing`
+    `https://api.tatts.com/svc/sales/vmax/web/data/racing${raceString}`
   );
   const newRaceday = await response.json();
-  return newRaceday.RaceDays[0];
+  console.log(`RaceDay Data Fetched: `, newRaceday);
+  return newRaceday;
 };
 
 export default getRacing;

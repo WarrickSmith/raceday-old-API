@@ -16,9 +16,9 @@ function App() {
   const [raceString, setRaceString] = useState(getDateString(new Date()));
 
   const loadData = async () => {
+    setRaceString(getDateString(new Date()));
     const newRaceMeetings = await getRacing(raceString);
-    setRaceMeetings(newRaceMeetings);
-    setRaces(newRaceMeetings.Meetings[raceMeeting].Races);
+    setRaceMeetings(newRaceMeetings.RaceDay);
   };
 
   useEffect(() => {
@@ -27,7 +27,6 @@ function App() {
 
   useEffect(() => {
     if (raceMeetings != null) {
-      console.log(`Updated Races: `, raceMeetings);
       setRaces(raceMeetings.Meetings[raceMeeting].Races);
     }
   }, [raceMeeting, raceMeetings]);
