@@ -3,7 +3,7 @@ import './App.css';
 
 // import racedays from './Data/racedays';
 import PageHeader from './components/PageHeader/PageHeader';
-import getRacing from './Services/getRacing/getRacing.js';
+import getRaceMeetings from './Services/getRaceMeetings/getRaceMeetings.js';
 import ShowRaceMeetings from './components/ShowRaceMeetings/ShowRaceMeetings';
 import ShowRaces from './components/ShowRaces/ShowRaces';
 import getDateString from './Services/getDateString/getDateString';
@@ -11,6 +11,7 @@ import getDateString from './Services/getDateString/getDateString';
 function App() {
   // define application hooks
   const [raceMeetings, setRaceMeetings] = useState(null);
+  const [raceData, setRaceData] = useState(null);
   const [races, setRaces] = useState(null);
   const [raceMeeting, setRaceMeeting] = useState(0);
   const [raceString, setRaceString] = useState(getDateString(new Date()));
@@ -18,7 +19,7 @@ function App() {
   // Function to do initial race meeting data load
   const loadData = async () => {
     setRaceString(getDateString(new Date()));
-    const newRaceMeetings = await getRacing(raceString);
+    const newRaceMeetings = await getRaceMeetings(raceString);
     setRaceMeetings(newRaceMeetings.RaceDay);
   };
 

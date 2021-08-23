@@ -1,4 +1,4 @@
-const getRacing = async (raceString) => {
+const getRaceMeetings = async (raceString) => {
   const response = await fetch(
     `https://api.tatts.com/svc/sales/vmax/web/data/racing${raceString}`
   );
@@ -7,4 +7,4 @@ const getRacing = async (raceString) => {
   return newRaceday;
 };
 
-export default getRacing;
+export default getRaceMeetings;
