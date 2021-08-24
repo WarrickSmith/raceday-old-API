@@ -24,8 +24,7 @@ function App() {
     setRaceString(getDateString(new Date()));
     const newRaceMeetings = await getRaceMeetings(raceString);
     setRaceMeetings(await newRaceMeetings.RaceDay);
-    const newRaceData = await getRaceData(raceString, newRaceMeetings);
-    console.log(`newRacedata:`, newRaceData, ` raceData`, raceData);
+    setRaceData(await getRaceData(raceString, newRaceMeetings));
   };
 
   //Initiate initial data load (once - on page load)
