@@ -4,6 +4,8 @@ import './App.css';
 // import racedays from './Data/racedays';
 import PageHeader from './components/PageHeader/PageHeader';
 import getRaceMeetings from './Services/getRaceMeetings/getRaceMeetings.js';
+import getRaceData from './Services/getRaceData/getRaceData';
+import getSortedRaces from './Services/getSortedRaces/getSortedRaces';
 import ShowRaceMeetings from './components/ShowRaceMeetings/ShowRaceMeetings';
 import ShowRaces from './components/ShowRaces/ShowRaces';
 import getDateString from './Services/getDateString/getDateString';
@@ -16,7 +18,7 @@ function App() {
   const [raceMeeting, setRaceMeeting] = useState(0);
   const [raceString, setRaceString] = useState(getDateString(new Date()));
 
-  // Function to do initial race meeting data load
+  // Function to do initial raceMeetings and raceData load
   const loadData = async () => {
     setRaceString(getDateString(new Date()));
     const newRaceMeetings = await getRaceMeetings(raceString);
@@ -31,8 +33,12 @@ function App() {
   useEffect(() => {
     if (raceMeetings != null) {
       setRaces(raceMeetings.Meetings[raceMeeting].Races);
+      const newRaceData = getRaceData(raceMeetings, raceString);
+      setRaceData(newRaceData);
+      console.log(`Final raceData Array:`, raceData);
+      getSortedRaces(getRaceMeetings);
     }
-  }, [raceMeeting, raceMeetings]);
+  }, [raceMeeting, raceMeetings, raceString]);
 
   return (
     <div className='container'>
