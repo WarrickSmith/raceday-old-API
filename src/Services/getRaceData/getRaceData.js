@@ -8,8 +8,10 @@ const getRaceData = async (raceMeetings, raceString) => {
         `https://api.tatts.com/svc/sales/vmax/web/data/racing${raceString}/${meetingCode}`
       );
       newRaceData.push(await response.json());
+      console.log(`getraceData frunction return:`, newRaceData);
+
+      return newRaceData;
     }
-    return newRaceData;
   }
 };
 

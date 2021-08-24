@@ -17,12 +17,17 @@ function App() {
   const [races, setRaces] = useState(null);
   const [raceMeeting, setRaceMeeting] = useState(0);
   const [raceString, setRaceString] = useState(getDateString(new Date()));
+  const [sortedRaces, setSortedRaces] = useState(null);
 
   // Function to do initial raceMeetings and raceData load
   const loadData = async () => {
     setRaceString(getDateString(new Date()));
     const newRaceMeetings = await getRaceMeetings(raceString);
     setRaceMeetings(newRaceMeetings.RaceDay);
+    const newRaceData = await getRaceData(newRaceMeetings, raceString);
+    setRaceData(newRaceData);
+    console.log(`Final raceData Array:`, newRaceData);
+    setSortedRaces(getSortedRaces(newRaceMeetings));
   };
 
   //Initiate initial data load (once - on page load)
@@ -33,12 +38,8 @@ function App() {
   useEffect(() => {
     if (raceMeetings != null) {
       setRaces(raceMeetings.Meetings[raceMeeting].Races);
-      const newRaceData = getRaceData(raceMeetings, raceString);
-      setRaceData(newRaceData);
-      console.log(`Final raceData Array:`, raceData);
-      getSortedRaces(getRaceMeetings);
     }
-  }, [raceMeeting, raceMeetings, raceString]);
+  }, [raceMeeting, raceMeetings]);
 
   return (
     <div className='container'>
