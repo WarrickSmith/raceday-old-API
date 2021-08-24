@@ -5,7 +5,7 @@ import './App.css';
 import PageHeader from './components/PageHeader/PageHeader';
 import getRaceMeetings from './Services/getRaceMeetings/getRaceMeetings.js';
 import getRaceData from './Services/getRaceData/getRaceData';
-import getSortedRaces from './Services/getSortedRaces/getSortedRaces';
+import getRaceList from './Services/getRaceList/getRaceList';
 import ShowRaceMeetings from './components/ShowRaceMeetings/ShowRaceMeetings';
 import ShowRaces from './components/ShowRaces/ShowRaces';
 import getDateString from './Services/getDateString/getDateString';
@@ -17,14 +17,17 @@ function App() {
   const [races, setRaces] = useState(null);
   const [raceMeeting, setRaceMeeting] = useState(0);
   const [raceString, setRaceString] = useState(getDateString(new Date()));
-  const [sortedRaces, setSortedRaces] = useState(null);
+  const [raceList, setRaceList] = useState(null);
 
   // Function to do initial raceMeetings and raceData load
   const loadData = async () => {
     setRaceString(getDateString(new Date()));
     const newRaceMeetings = await getRaceMeetings(raceString);
-    setRaceMeetings(await newRaceMeetings.RaceDay);
-    setRaceData(await getRaceData(raceString, newRaceMeetings));
+    setRaceMeetings(newRaceMeetings.RaceDay);
+    const newRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
+    setRaceList(newRaceList);
+    const newRaceData = await getRaceData(raceString, newRaceMeetings);
+    setRaceData(newRaceData);
   };
 
   //Initiate initial data load (once - on page load)
