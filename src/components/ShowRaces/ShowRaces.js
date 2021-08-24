@@ -1,5 +1,4 @@
 const ShowRaces = ({ races }) => {
-  console.log(`Races are: `, races);
   return (
     <div className='show-races'>
       <label htmlFor='races'>Selected Race: </label>
