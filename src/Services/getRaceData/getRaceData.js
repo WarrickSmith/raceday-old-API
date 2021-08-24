@@ -1,18 +1,17 @@
-const getRaceData = async (raceMeetings, raceString) => {
-  if (raceMeetings != null) {
-    const newRaceData = [];
-    console.log(`Objects passed to getRaceData: `, raceMeetings, raceString);
-    for (const index in raceMeetings.Meetings) {
-      const meetingCode = raceMeetings.Meetings[index].MeetingCode;
-      const response = await fetch(
-        `https://api.tatts.com/svc/sales/vmax/web/data/racing${raceString}/${meetingCode}`
-      );
-      newRaceData.push(await response.json());
-      console.log(`getraceData frunction return:`, newRaceData);
-
-      return newRaceData;
-    }
+const getRaceData = async (raceString, newRaceMeetings) => {
+  // Iterate meeting and determine meeting code, assign code to string
+  console.log(`getRaceData argument`, newRaceMeetings);
+  let raceData = [];
+  for (const meeting of newRaceMeetings.RaceDay.Meetings) {
+    // Fetch meeting using code, push result to newRaceData array
+    let meetingCode = meeting.MeetingCode;
+    const response = await fetch(
+      `https://api.tatts.com/svc/sales/vmax/web/data/racing${raceString}/${meetingCode}`
+    );
+    let newRacedata = await response.json();
+    raceData.push(newRacedata.RaceDay.Meetings[0]);
   }
+  return raceData;
 };
 
 export default getRaceData;

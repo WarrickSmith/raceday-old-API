@@ -23,17 +23,16 @@ function App() {
   const loadData = async () => {
     setRaceString(getDateString(new Date()));
     const newRaceMeetings = await getRaceMeetings(raceString);
-    setRaceMeetings(newRaceMeetings.RaceDay);
-    const newRaceData = await getRaceData(newRaceMeetings, raceString);
-    setRaceData(newRaceData);
-    console.log(`Final raceData Array:`, newRaceData);
-    setSortedRaces(getSortedRaces(newRaceMeetings));
+    setRaceMeetings(await newRaceMeetings.RaceDay);
+    const newRaceData = await getRaceData(raceString, newRaceMeetings);
+    console.log(`newRacedata:`, newRaceData, ` raceData`, raceData);
   };
 
   //Initiate initial data load (once - on page load)
   useEffect(() => {
     loadData();
   }, []);
+
   // Re-render races on change in active race meeting selection
   useEffect(() => {
     if (raceMeetings != null) {
