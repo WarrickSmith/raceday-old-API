@@ -36,7 +36,6 @@ function App() {
     loadData();
   }, []);
 
-  // Re-render races on change in active race meeting selection
   useEffect(() => {
     if (raceMeetings != null) {
       setRaces(raceMeetings.Meetings[raceMeeting].Races);
