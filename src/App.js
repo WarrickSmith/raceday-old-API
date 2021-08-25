@@ -3,6 +3,7 @@ import './App.css';
 
 // import racedays from './Data/racedays';
 import PageHeader from './components/PageHeader/PageHeader';
+import RaceSelector from './components/RaceSelector/RaceSelector';
 import getRaceMeetings from './Services/getRaceMeetings/getRaceMeetings.js';
 import getRaceData from './Services/getRaceData/getRaceData';
 import getRaceList from './Services/getRaceList/getRaceList';
@@ -45,6 +46,7 @@ function App() {
   return (
     <div className='container'>
       <PageHeader title={'RaceDay'} />
+      <RaceSelector raceList={raceList} />
       <ShowRaceMeetings
         raceMeetings={raceMeetings}
         setRaceMeeting={setRaceMeeting}
