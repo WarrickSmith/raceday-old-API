@@ -35,14 +35,21 @@ function App() {
 
   //Initiate initial data load (once - on page load)
   useEffect(() => {
+    console.log(`UseEffect enacted! - loadData function called`);
     loadData();
   }, []);
 
   useEffect(() => {
     if (raceMeetings != null) {
+      console.log(`UseEffect enacted! - Change in raceMeetings or raceMeeting`);
       setRaces(raceMeetings.Meetings[raceMeeting].Races);
     }
   }, [raceMeeting, raceMeetings]);
+
+  useEffect(() => {
+    console.log(`UseEffect enacted! - Change in raceList`);
+    setCurrentRace(getNextRace(raceList));
+  }, [raceList]);
 
   return (
     <div className='container'>
