@@ -23,19 +23,21 @@ function App() {
   const [currentRace, setCurrentRace] = useState(0);
 
   //Initiate initial data load (once - on page load)
+  const loadData = async () => {
+    setRaceString(getDateString(new Date()));
+    const newRaceMeetings = await getRaceMeetings(raceString);
+    setRaceMeetings(newRaceMeetings.RaceDay);
+    const updateRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
+    setRaceList(updateRaceList);
+    const newRaceData = await getRaceData(raceString, newRaceMeetings);
+    setRaceData(newRaceData);
+  };
+
   useEffect(() => {
     console.log(`UseEffect enacted! - loadData function called`);
-    setRaceString(getDateString(new Date()));
-    const loadData = async () => {
-      const newRaceMeetings = await getRaceMeetings(raceString);
-      setRaceMeetings(newRaceMeetings.RaceDay);
-      const updateRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
-      setRaceList(updateRaceList);
-      const newRaceData = await getRaceData(raceString, newRaceMeetings);
-      setRaceData(newRaceData);
-    };
-    loadData();
-  }, [raceString]);
+    loadData(raceString);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   useEffect(() => {
     if (raceMeetings != null) {
@@ -63,6 +65,7 @@ function App() {
         setRaceMeeting={setRaceMeeting}
       />
       <ShowRaces races={races} />
+      <button onClick={loadData}>Reload Data</button>
     </div>
   );
 }
