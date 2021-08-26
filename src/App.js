@@ -10,6 +10,7 @@ import getRaceList from './Services/getRaceList/getRaceList';
 import ShowRaceMeetings from './components/ShowRaceMeetings/ShowRaceMeetings';
 import ShowRaces from './components/ShowRaces/ShowRaces';
 import getDateString from './Services/getDateString/getDateString';
+import getNextRace from './Services/getNextRace/getNextRace';
 
 function App() {
   // define application hooks
@@ -19,14 +20,15 @@ function App() {
   const [raceMeeting, setRaceMeeting] = useState(0);
   const [raceString, setRaceString] = useState(getDateString(new Date()));
   const [raceList, setRaceList] = useState(null);
+  const [currentRace, setCurrentRace] = useState(0);
 
   // Function to do initial raceMeetings and raceData load
   const loadData = async () => {
     setRaceString(getDateString(new Date()));
     const newRaceMeetings = await getRaceMeetings(raceString);
     setRaceMeetings(newRaceMeetings.RaceDay);
-    const newRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
-    setRaceList(newRaceList);
+    const updateRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
+    setRaceList(updateRaceList);
     const newRaceData = await getRaceData(raceString, newRaceMeetings);
     setRaceData(newRaceData);
   };
@@ -45,7 +47,12 @@ function App() {
   return (
     <div className='container'>
       <PageHeader title={'RaceDay'} />
-      <RaceSelector raceList={raceList} />
+      <RaceSelector
+        raceList={raceList}
+        currentRace={currentRace}
+        setCurrentRace={setCurrentRace}
+        getNextRace={getNextRace}
+      />
       <ShowRaceMeetings
         raceMeetings={raceMeetings}
         setRaceMeeting={setRaceMeeting}
