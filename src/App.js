@@ -22,22 +22,20 @@ function App() {
   const [raceList, setRaceList] = useState(null);
   const [currentRace, setCurrentRace] = useState(0);
 
-  // Function to do initial raceMeetings and raceData load
-  const loadData = async () => {
-    setRaceString(getDateString(new Date()));
-    const newRaceMeetings = await getRaceMeetings(raceString);
-    setRaceMeetings(newRaceMeetings.RaceDay);
-    const updateRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
-    setRaceList(updateRaceList);
-    const newRaceData = await getRaceData(raceString, newRaceMeetings);
-    setRaceData(newRaceData);
-  };
-
   //Initiate initial data load (once - on page load)
   useEffect(() => {
     console.log(`UseEffect enacted! - loadData function called`);
+    setRaceString(getDateString(new Date()));
+    const loadData = async () => {
+      const newRaceMeetings = await getRaceMeetings(raceString);
+      setRaceMeetings(newRaceMeetings.RaceDay);
+      const updateRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
+      setRaceList(updateRaceList);
+      const newRaceData = await getRaceData(raceString, newRaceMeetings);
+      setRaceData(newRaceData);
+    };
     loadData();
-  }, []);
+  }, [raceString]);
 
   useEffect(() => {
     if (raceMeetings != null) {
@@ -65,7 +63,6 @@ function App() {
         setRaceMeeting={setRaceMeeting}
       />
       <ShowRaces races={races} />
-      <button onClick={loadData}>Re-Load Race Data</button>
     </div>
   );
 }
