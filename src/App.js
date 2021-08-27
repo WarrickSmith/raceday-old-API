@@ -7,6 +7,7 @@ import RaceSelector from './components/RaceSelector/RaceSelector';
 import getRaceMeetings from './Services/getRaceMeetings/getRaceMeetings.js';
 import getRaceData from './Services/getRaceData/getRaceData';
 import getRaceList from './Services/getRaceList/getRaceList';
+import RaceInfo from './components/RaceInfo/RaceInfo';
 import ShowRaceMeetings from './components/ShowRaceMeetings/ShowRaceMeetings';
 import ShowRaces from './components/ShowRaces/ShowRaces';
 import getDateString from './Services/getDateString/getDateString';
@@ -60,6 +61,7 @@ function App() {
         setCurrentRace={setCurrentRace}
         getNextRace={getNextRace}
       />
+      <RaceInfo raceList={raceList} currentRace={currentRace} />
       <ShowRaceMeetings
         raceMeetings={raceMeetings}
         setRaceMeeting={setRaceMeeting}
