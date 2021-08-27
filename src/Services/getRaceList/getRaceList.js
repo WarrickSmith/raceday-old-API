@@ -22,6 +22,13 @@ const getRaceList = (raceMeetings) => {
       newObject.VenueName = meeting.VenueName;
       newObject.MeetingType = meeting.MeetingType;
       newObject.RaceNumber = race.RaceNumber;
+      newObject.RaceName = race.RaceName;
+      newObject.RaceStatus = race.Status;
+      newObject.RaceDistance = race.Distance;
+      newObject.RaceWeatherCondition = race.WeatherCondition;
+      newObject.RaceTrackCondition = race.TrackCondition;
+      newObject.RaceRunnerCount = meeting.Races.length;
+
       newObject.RaceTime = nswTime(new Date(race.RaceTime));
       newRaceList.push(newObject);
     }
