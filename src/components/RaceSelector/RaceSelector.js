@@ -35,7 +35,6 @@ const RaceSelector = ({
   // Event handler for clicking on '>>' increase race by one
   const handleOnClickPlus = () => {
     const numberOfRaces = raceList.length;
-    console.log(`Number of races: `, numberOfRaces);
     if (currentRace < numberOfRaces - 1) {
       currentRace++;
       setCurrentRace(currentRace);
@@ -52,7 +51,6 @@ const RaceSelector = ({
 
   return (
     <div className='raceselector'>
-      <p>Current Race is: {currentRace}</p>
       {raceList && (
         <select
           id='raceList'

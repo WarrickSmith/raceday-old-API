@@ -2,9 +2,6 @@
 const RaceInfo = ({ raceList, currentRace }) => {
   console.log(`RaceInfo Element Loading...`);
   console.log(`currentRace: `, currentRace);
-  if (raceList != null) {
-    console.log(`TEST: `, raceList[0]);
-  }
   if (raceList == null || !currentRace) {
     return (
       <div>
