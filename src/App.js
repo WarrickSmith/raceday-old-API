@@ -54,20 +54,44 @@ function App() {
 
   return (
     <div className='container'>
-      <PageHeader title={'RaceDay'} />
-      <RaceSelector
-        raceList={raceList}
-        currentRace={currentRace}
-        setCurrentRace={setCurrentRace}
-        getNextRace={getNextRace}
-      />
-      <RaceInfo raceList={raceList} currentRace={currentRace} />
-      <ShowRaceMeetings
-        raceMeetings={raceMeetings}
-        setRaceMeeting={setRaceMeeting}
-      />
-      <ShowRaces races={races} />
-      <button onClick={loadData}>Reload Data</button>
+      <div className='header'>
+        <PageHeader title={'RaceDay'} />
+      </div>
+      <div className='raceday'>
+        <div>
+          <RaceSelector
+            raceList={raceList}
+            currentRace={currentRace}
+            setCurrentRace={setCurrentRace}
+            getNextRace={getNextRace}
+          />
+        </div>
+        <div>
+          <RaceInfo raceList={raceList} currentRace={currentRace} />
+        </div>
+        <div>
+          <h2>RaceStatus</h2>
+        </div>
+      </div>
+      <div className='races'>
+        <div>
+          <ShowRaceMeetings
+            raceMeetings={raceMeetings}
+            setRaceMeeting={setRaceMeeting}
+          />
+        </div>
+        <div>
+          <ShowRaces races={races} />
+        </div>
+        <div>Win/PLc Pools</div>
+      </div>
+      <div className='results'>
+        <div>
+          <button onClick={loadData}>Reload Data</button>
+        </div>
+        <div>Race Results</div>
+        <div>Race Status</div>
+      </div>
     </div>
   );
 }

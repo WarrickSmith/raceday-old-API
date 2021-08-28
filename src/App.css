@@ -1,3 +1,12 @@
+/* Main App css, focused on formatting containers and page layout not react component specific css.
+
+There are four main css containers contained within the 'body' container:
+1. header   contains: Application Header.
+2. raceday  contains: RaceSelector, RaceInfo and SessionStatus
+3. races    contains: Runners, DividendInfo, Dividend, RacePools
+4. results  contains: RaceBettingPools, RaceResults, RaceStatus
+ */
+
 :root {
   --primary: rgb(68, 68, 233);
   --secondary: white;
@@ -11,8 +20,25 @@ body {
 }
 
 .container {
-  margin: 0 auto;
+  /* margin: 0 auto; */
   display: grid;
-  grid-template-columns: 1fr;
   font-family: Helvetica, Arial, sans-serif;
+}
+.header {
+  background-color: var(--primary);
+}
+.raceday {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: darkkhaki;
+}
+.races {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: cadetblue;
+}
+.results {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  background-color: darkcyan;
 }

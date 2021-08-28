@@ -10,5 +10,4 @@
   display: grid;
   justify-content: center;
   color: var(--secondary);
-  background-color: var(--primary);
 }
