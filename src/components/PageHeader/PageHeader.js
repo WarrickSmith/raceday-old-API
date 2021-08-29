@@ -1,5 +1,3 @@
-import './PageHeader.css';
-
 const PageHeader = ({ title }) => {
   return (
     <div className='page-header'>

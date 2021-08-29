@@ -8,8 +8,10 @@ There are four main css containers contained within the 'body' container:
  */
 
 :root {
+  --header: rgb(68, 68, 233);
   --primary: rgb(68, 68, 233);
   --secondary: white;
+  --textColour: white;
   --dark: #333;
   --light: #fff;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
@@ -24,23 +26,30 @@ body {
   display: grid;
   grid-template-rows: 1fr 4fr 5fr 2fr;
   font-family: Helvetica, Arial, sans-serif;
+  color: var(--textColour);
 }
 .header {
-  background-color: var(--primary);
+  display: grid;
+  justify-content: center;
+  margin: 1% 1% 0.5% 1%;
+  background-color: var(--header);
 }
 .raceday {
+  margin: 0.5% 1%;
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   background-color: darkkhaki;
 }
 .races {
+  margin: 0.5% 1%;
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   background-color: cadetblue;
 }
 .results {
+  margin: 0.5% 1% 1% 1%;
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
