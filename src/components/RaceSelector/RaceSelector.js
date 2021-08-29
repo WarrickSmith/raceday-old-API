@@ -1,4 +1,6 @@
 import React from 'react';
+import './RaceSelector.css';
+
 const RaceSelector = ({
   raceList,
   currentRace,
@@ -53,6 +55,7 @@ const RaceSelector = ({
     <div className='raceselector'>
       {raceList && (
         <select
+          className='race-select-textbox'
           id='raceList'
           name='raceList'
           value={currentRace}
@@ -67,10 +70,18 @@ const RaceSelector = ({
           ))}
         </select>
       )}
-      <div>
-        <button onClick={handleOnClickMinus}>{`<<`}</button>
-        <button onClick={handleOnClick}>NEXT SCHEDULED RACE</button>
-        <button onClick={handleOnClickPlus}>{`>>`}</button>
+      <div className='selector-buttons'>
+        <button
+          className='button-minus'
+          onClick={handleOnClickMinus}
+        >{`<<`}</button>
+        <button className='button-next' onClick={handleOnClick}>
+          NEXT SCHEDULED RACE
+        </button>
+        <button
+          className='button-plus'
+          onClick={handleOnClickPlus}
+        >{`>>`}</button>
       </div>
     </div>
   );

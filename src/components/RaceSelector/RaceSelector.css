@@ -1,0 +1,41 @@
+:root {
+  --background: rgb(68, 65, 65);
+  --header: rgb(68, 68, 233);
+  --primary: rgb(32, 32, 36);
+  --secondary: white;
+  --textColour: rgb(236, 230, 230);
+  --dark: #333;
+  --light: #fff;
+  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+}
+
+.raceselector {
+  display: grid;
+  grid-gap: 15%;
+  margin: 4%;
+}
+
+.race-select-textbox,
+.raceselector button {
+  padding: 4% 2%;
+  color: var(--textColour);
+  background-color: var(--background);
+}
+.race-select-textbox {
+  font-size: medium;
+  border-radius: 1.5vh;
+}
+.selector-buttons {
+  display: grid;
+  grid-template-columns: 1fr 8fr 1fr;
+}
+
+.button-next {
+  margin: 0 2%;
+}
+.button-minus {
+  border-radius: 1.5vh 0 0 1.5vh;
+}
+.button-plus {
+  border-radius: 0 1.5vh 1.5vh 0;
+}
