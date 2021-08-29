@@ -25,8 +25,12 @@ const getRaceList = (raceMeetings) => {
       newObject.RaceName = race.RaceName;
       newObject.RaceStatus = race.Status;
       newObject.RaceDistance = race.Distance;
-      newObject.RaceWeatherCondition = race.WeatherCondition;
-      newObject.RaceTrackCondition = race.TrackCondition;
+      race.hasOwnProperty('WeatherCondition')
+        ? (newObject.RaceWeatherCondition = race.WeatherCondition)
+        : (newObject.RaceWeatherCondition = 'Not Reported');
+      race.hasOwnProperty('TrackCondition')
+        ? (newObject.RaceTrackCondition = race.TrackCondition)
+        : (newObject.RaceTrackCondition = 'Not Reported');
       newObject.RaceRunnerCount = meeting.Races.length;
 
       newObject.RaceTime = nswTime(new Date(race.RaceTime));
@@ -39,6 +43,7 @@ const getRaceList = (raceMeetings) => {
     const d = new Date(b.RaceTime);
     return c - d;
   });
+  console.log(`RaceList: `, raceList);
   return raceList;
 };
 
