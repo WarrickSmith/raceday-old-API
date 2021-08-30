@@ -10,20 +10,43 @@
   background-color: var(--background);
   padding: 1vh;
 }
+
 .race-select-textbox {
-  font-size: medium;
+  font-size: 1.5vh;
   border-radius: 1.5vh;
-  padding: 1vh;
 }
+
 .selector-buttons {
   display: grid;
   grid-gap: 1%;
-  grid-template-columns: 1fr 8fr 1fr;
+  grid-template-columns: 1fr 5fr 1fr;
 }
 
+.button-next {
+  font-size: 1vh;
+}
 .button-minus {
+  font-size: 1vh;
   border-radius: 1.5vh 0 0 1.5vh;
 }
 .button-plus {
+  font-size: 1vh;
   border-radius: 0 1.5vh 1.5vh 0;
+}
+
+/* Media breakpoint for screen widths larger then average mobile screen */
+@media only screen and (min-width: 38rem) {
+  .race-select-textbox {
+    font-size: 1.5vw;
+  }
+
+  .button-next {
+    font-size: 1vw;
+  }
+  .button-minus {
+    font-size: 1vw;
+  }
+  .button-plus {
+    font-size: 1vw;
+  }
 }

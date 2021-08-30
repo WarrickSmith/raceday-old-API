@@ -13,11 +13,13 @@ There are four main css containers contained within the 'body' container:
   --textColour: rgb(236, 230, 230);
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
+
 /* Remove default padding and margin on all elements */
 * {
   padding: 0;
   margin: 0;
 }
+
 body {
   margin: 0;
   background-color: var(--background);
@@ -27,33 +29,49 @@ body {
   height: 100vh;
   display: grid;
   margin: 1%;
-  grid-template-rows: 1fr 4fr 5fr 2fr;
+  grid-template-rows: 0.75fr 2fr 5fr 2fr;
   grid-gap: 1% 1%;
   font-family: Helvetica, Arial, sans-serif;
   background-color: var(--background);
   color: var(--textColour);
 }
+
 .header {
   display: grid;
   justify-content: center;
   align-content: center;
   background-color: var(--primary);
 }
+
 .raceday {
   overflow-y: auto;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
   background-color: var(--primary);
 }
+
 .races {
   overflow-y: auto;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
   background-color: var(--primary);
 }
+
 .results {
   overflow-y: auto;
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
   background-color: var(--primary);
+}
+
+/* Media breakpoint for screen widths larger then average mobile screen */
+@media only screen and (min-width: 38rem) {
+  .raceday {
+    grid-template-columns: 1fr 3fr 1fr;
+  }
+
+  .races {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+
+  .results {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
 }
