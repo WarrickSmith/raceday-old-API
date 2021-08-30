@@ -1,14 +1,3 @@
-:root {
-  --background: rgb(68, 65, 65);
-  --header: rgb(68, 68, 233);
-  --primary: rgb(32, 32, 36);
-  --secondary: white;
-  --textColour: rgb(236, 230, 230);
-  --dark: #333;
-  --light: #fff;
-  --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
-}
-
 .raceselector {
   display: grid;
   grid-gap: 1vh;
@@ -19,10 +8,12 @@
 .raceselector button {
   color: var(--textColour);
   background-color: var(--background);
+  padding: 1vh;
 }
 .race-select-textbox {
   font-size: medium;
   border-radius: 1.5vh;
+  padding: 1vh;
 }
 .selector-buttons {
   display: grid;
