@@ -12,6 +12,7 @@ import ShowRaceMeetings from './components/ShowRaceMeetings/ShowRaceMeetings';
 import ShowRaces from './components/ShowRaces/ShowRaces';
 import getDateString from './Services/getDateString/getDateString';
 import getNextRace from './Services/getNextRace/getNextRace';
+import SessionStatus from './components/SessionStatus/SessionStatus';
 
 function App() {
   // define application hooks
@@ -70,7 +71,7 @@ function App() {
           <RaceInfo raceList={raceList} currentRace={currentRace} />
         </div>
         <div>
-          <h2>RaceStatus</h2>
+          <SessionStatus />
         </div>
       </div>
       <div className='races'>

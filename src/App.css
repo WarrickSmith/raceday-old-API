@@ -64,7 +64,7 @@ body {
 /* Media breakpoint for screen widths larger then average mobile screen */
 @media only screen and (min-width: 38rem) {
   .raceday {
-    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-columns: 1fr 3fr 2fr;
   }
 
   .races {
