@@ -12,13 +12,11 @@
 .raceselector {
   display: grid;
   grid-gap: 1vh;
-  margin: 2%;
-  justify-items: left;
+  margin: 1vh;
 }
 
 .race-select-textbox,
 .raceselector button {
-  padding: 4% 2%;
   color: var(--textColour);
   background-color: var(--background);
 }
@@ -32,9 +30,6 @@
   grid-template-columns: 1fr 8fr 1fr;
 }
 
-.button-next {
-  /* margin: 0 2%; */
-}
 .button-minus {
   border-radius: 1.5vh 0 0 1.5vh;
 }

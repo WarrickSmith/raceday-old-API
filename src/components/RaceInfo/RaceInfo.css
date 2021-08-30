@@ -12,18 +12,18 @@
 .show-raceinfo {
   display: grid;
   grid-gap: 1vh;
-  margin: 2%;
+  margin: 1vh;
 }
 .show-raceinfo-title,
 .show-raceinfo-detail {
-  padding: 4% 2%;
   color: var(--textColour);
   background-color: var(--background);
-  border-radius: 1.5vh;
+  border-radius: 1.5vh 1.5vh;
 }
 
 .show-raceinfo-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 1vh;
   font-size: small;
 }

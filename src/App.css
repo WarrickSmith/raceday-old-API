@@ -17,7 +17,11 @@ There are four main css containers contained within the 'body' container:
   --light: #fff;
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
-
+/* Remove default padding and margin on all elements */
+* {
+  padding: 0;
+  margin: 0;
+}
 body {
   margin: 0;
   background-color: var(--background);
@@ -42,7 +46,6 @@ body {
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
-  grid-gap: 1% 1%;
   background-color: var(--primary);
 }
 .races {
