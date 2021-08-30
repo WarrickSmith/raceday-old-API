@@ -20,12 +20,15 @@ There are four main css containers contained within the 'body' container:
 
 body {
   margin: 0;
+  background-color: var(--background);
 }
 
 .container {
   height: 100vh;
   display: grid;
+  margin: 1%;
   grid-template-rows: 1fr 4fr 5fr 2fr;
+  grid-gap: 1% 1%;
   font-family: Helvetica, Arial, sans-serif;
   background-color: var(--background);
   color: var(--textColour);
@@ -33,25 +36,22 @@ body {
 .header {
   display: grid;
   justify-content: center;
-  margin: 1% 1% 0.5% 1%;
   background-color: var(--primary);
 }
 .raceday {
-  margin: 0.5% 1%;
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
+  grid-gap: 1% 1%;
   background-color: var(--primary);
 }
 .races {
-  margin: 0.5% 1%;
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   background-color: var(--primary);
 }
 .results {
-  margin: 0.5% 1% 1% 1%;
   overflow-y: auto;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;

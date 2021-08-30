@@ -9,35 +9,21 @@
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
 }
 
-.raceselector {
+.show-raceinfo {
   display: grid;
   grid-gap: 1vh;
   margin: 2%;
-  justify-items: left;
 }
-
-.race-select-textbox,
-.raceselector button {
+.show-raceinfo-title,
+.show-raceinfo-detail {
   padding: 4% 2%;
   color: var(--textColour);
   background-color: var(--background);
-}
-.race-select-textbox {
-  font-size: medium;
   border-radius: 1.5vh;
 }
-.selector-buttons {
-  display: grid;
-  grid-gap: 1%;
-  grid-template-columns: 1fr 8fr 1fr;
-}
 
-.button-next {
-  /* margin: 0 2%; */
-}
-.button-minus {
-  border-radius: 1.5vh 0 0 1.5vh;
-}
-.button-plus {
-  border-radius: 0 1.5vh 1.5vh 0;
+.show-raceinfo-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  font-size: small;
 }
