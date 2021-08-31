@@ -1,13 +1,11 @@
-/* This function (Component) takes in a list of races sorted by race start time,
-  a value of the current active race, an array of race maaetings(raceData) and a function call to get a list of runners for the current race. 
-  The ShowRunners element populates a list of race runners along with their current win/plc odds. */
+/* This function (Component) takes in an array of current race data with details of one specific race and the runners in that race. It then returns an element with race Runner information */
 
-const ShowRunners = ({ raceList, currentRace, raceData, getRunners }) => {
+const ShowRunners = ({ currentRaceData }) => {
   console.log(`ShowRunners Element Loading...`);
   let race = [];
 
-  if (raceList !== null && raceData !== null) {
-    race = getRunners(raceList, currentRace, raceData);
+  if (currentRaceData !== null) {
+    race = currentRaceData;
     console.log(`Final Race Data!!: `, race);
   }
 
@@ -15,7 +13,7 @@ const ShowRunners = ({ raceList, currentRace, raceData, getRunners }) => {
     <div>
       <div>
         <h2>Runner</h2>
-        {raceList && raceData && (
+        {currentRaceData && (
           <ol id='runners' name='runners'>
             {race.Runners.map((runner, index) => (
               <li key={index + runner.RunnerName}>{runner.RunnerName}</li>

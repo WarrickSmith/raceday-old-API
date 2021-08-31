@@ -2,7 +2,10 @@
 
 const getRunners = (raceList, currentRace, raceData) => {
   let raceMatch = [];
-  console.log(`raceList detected... Fetching Runners...`);
+  console.log(
+    `**** getRunners Function Called... Fetching Runners for Current Race:`,
+    currentRace
+  );
   for (const meeting of raceData) {
     if (meeting.MeetingId === raceList[currentRace].MeetingId) {
       raceMatch = meeting.Races[raceList[currentRace].RaceNumber - 1];

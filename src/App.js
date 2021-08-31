@@ -25,6 +25,7 @@ function App() {
   const [raceString, setRaceString] = useState(getDateString(new Date()));
   const [raceList, setRaceList] = useState(null);
   const [currentRace, setCurrentRace] = useState(0);
+  const [currentRaceData, setCurrentRaceData] = useState(null);
 
   //Initiate initial data load (once - on page load)
   const loadData = async () => {
@@ -55,6 +56,14 @@ function App() {
     setCurrentRace(getNextRace(raceList));
   }, [raceList]);
 
+  // This useEffect is to update currentRace with runner data after all other data loads. This data is then used to populate race specific components/elements with data.
+  useEffect(() => {
+    console.log(`UseEffect enacted! - Change in RaceData!!`);
+    if (raceData !== null && raceList !== null) {
+      setCurrentRaceData(getRunners(raceList, currentRace, raceData));
+    }
+  }, [raceData, raceList, currentRace]);
+
   return (
     <div className='container'>
       <div className='header'>
@@ -78,12 +87,7 @@ function App() {
       </div>
       <div className='races'>
         <div>
-          <ShowRunners
-            raceList={raceList}
-            currentRace={currentRace}
-            raceData={raceData}
-            getRunners={getRunners}
-          />
+          <ShowRunners currentRaceData={currentRaceData} />
         </div>
         <div>
           <h2>Dividend Info</h2>
