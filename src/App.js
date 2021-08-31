@@ -84,22 +84,27 @@ function App() {
             raceData={raceData}
             getRunners={getRunners}
           />
-          <ShowRaceMeetings
-            raceMeetings={raceMeetings}
-            setRaceMeeting={setRaceMeeting}
-          />
         </div>
         <div>
-          <ShowRaces races={races} />
+          <h2>Dividend Info</h2>
         </div>
-        <div>Win/PLc Pools</div>
+        <div>
+          <h2>Win/Plc Pools</h2>
+        </div>
       </div>
       <div className='results'>
         <div>
           <button onClick={loadData}>Reload Data</button>
         </div>
-        <div>Race Results</div>
+        <div>
+          Race Results
+          <ShowRaceMeetings
+            raceMeetings={raceMeetings}
+            setRaceMeeting={setRaceMeeting}
+          />
+        </div>
         <div>Race Status</div>
+        <ShowRaces races={races} />
       </div>
     </div>
   );
