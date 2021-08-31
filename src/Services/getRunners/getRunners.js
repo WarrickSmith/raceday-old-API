@@ -1,3 +1,5 @@
+/* This function takes the raceList indexed by currentRace to match with a corresponding meeting(MeetingID) from raceData to then locate an array of races in the meeting and then the race number based on currentRace. The resulting race information, runners, pools etc is returned as an object to the ShowRunners component. */
+
 const getRunners = (raceList, currentRace, raceData) => {
   let raceMatch = [];
   console.log(`raceList detected... Fetching Runners...`);

@@ -1,4 +1,8 @@
-import React from 'react';
+/* This function (Component) takes in a list of races sorted by race start time,
+  a value of the current active race, a function call to update the current race
+  and a function to return the race number of the next scheduled race. 
+  The RaceSelector element populates a selectable list of races with the first race as the default. Clicking on 'Next Scheduled Race' invokes the getNextRace onClick event handler and resulting race index value is passed to setCurrentRace to update the currentRace state. If a race is selected from the the list of races dropdown, then the onChange event handler is envoked to update the currentRace by passing the seleced race target value to setCurrentRace. */
+
 import './RaceSelector.css';
 
 const RaceSelector = ({
@@ -7,11 +11,6 @@ const RaceSelector = ({
   setCurrentRace,
   getNextRace,
 }) => {
-  /* This function takes in a list of races sorted by race start time,
-  a value of the current active race, a function call to update the current race
-  and a function to return the race number of the next scheduled race. 
-  The RaceSelector element populates a selectable list of races with the first race as the default. Clicking on 'Next Scheduled Race' invokes the getNextRace onClick event handler and resulting race index value is passed to setCurrentRace to update the currentRace state. If a race is selected from the the list of races dropdown, then the onChange event handler is envoked to update the currentRace by passing the seleced race target value to setCurrentRace. */
-
   console.log(`RaceSelector Element Loading...`);
 
   // Event handler for selecting different race from dropdown list

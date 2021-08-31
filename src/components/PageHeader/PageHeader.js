@@ -1,3 +1,5 @@
+/* This function (Component) displays the appliction name in a header Component */
+
 const PageHeader = ({ title }) => {
   return (
     <div className='page-header'>
