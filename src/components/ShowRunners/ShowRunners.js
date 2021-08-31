@@ -16,14 +16,31 @@ const ShowRunners = ({ currentRaceData }) => {
         {currentRaceData && (
           <ol id='runners' name='runners'>
             {race.Runners.map((runner, index) => (
-              <li key={index + runner.RunnerName}>{runner.RunnerName}</li>
+              <li key={index + runner.RunnerName}>
+                <div>
+                  {runner.RunnerNumber} {runner.RunnerName}
+                </div>
+                <div>
+                  {runner.RiderName} ({runner.Barrier})
+                </div>
+              </li>
             ))}
           </ol>
         )}
       </div>
       <div>
         <br />
-        <h2>More Runner Info</h2>
+        <h2>Win/Plc</h2>
+        {currentRaceData && (
+          <ol id='runners' name='runners'>
+            {race.Runners.map((runner, index) => (
+              <li key={index + runner.RunnerName}>
+                <div>{runner.WinOdss}</div>
+                <div>{runner.PlaceOdds}</div>
+              </li>
+            ))}
+          </ol>
+        )}
       </div>
     </div>
   );
