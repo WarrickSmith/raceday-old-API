@@ -13,6 +13,8 @@ import ShowRaces from './components/ShowRaces/ShowRaces';
 import getDateString from './Services/getDateString/getDateString';
 import getNextRace from './Services/getNextRace/getNextRace';
 import SessionStatus from './components/SessionStatus/SessionStatus';
+import getRunners from './Services/getRunners/getRunners';
+import ShowRunners from './components/ShowRunners/ShowRunners';
 
 function App() {
   // define application hooks
@@ -76,6 +78,12 @@ function App() {
       </div>
       <div className='races'>
         <div>
+          <ShowRunners
+            raceList={raceList}
+            currentRace={currentRace}
+            raceData={raceData}
+            getRunners={getRunners}
+          />
           <ShowRaceMeetings
             raceMeetings={raceMeetings}
             setRaceMeeting={setRaceMeeting}
