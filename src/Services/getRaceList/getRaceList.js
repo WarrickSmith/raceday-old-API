@@ -31,8 +31,6 @@ const getRaceList = (raceMeetings) => {
       race.hasOwnProperty('TrackCondition')
         ? (newObject.RaceTrackCondition = race.TrackCondition)
         : (newObject.RaceTrackCondition = 'Not Reported');
-      newObject.RaceRunnerCount = meeting.Races.length;
-
       newObject.RaceTime = nswTime(new Date(race.RaceTime));
       newRaceList.push(newObject);
     }

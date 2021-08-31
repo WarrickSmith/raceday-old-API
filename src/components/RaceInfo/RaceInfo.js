@@ -18,7 +18,7 @@ const RaceInfo = ({ raceList, currentRace }) => {
       </div>
       <div className='show-raceinfo-detail'>
         <h3>RACE DISTANCE - {raceList[currentRace].RaceDistance}</h3>
-        <h3>RUNNERS - {raceList[currentRace].RaceRunnerCount}</h3>
+        <h3>STATUS - {raceList[currentRace].RaceStatus}</h3>
         <h3>
           WEATHER - {raceList[currentRace].RaceWeatherCondition.toUpperCase()}
         </h3>
