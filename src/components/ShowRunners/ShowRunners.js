@@ -31,7 +31,7 @@ const ShowRunners = ({ currentRaceData }) => {
       </div>
       <div className='dividends'>
         <div>
-          <h2>Win /</h2>
+          <h2>Win</h2>
           {currentRaceData && (
             <ol id='win' name='win'>
               {race.Runners.map((runner, index) => (
