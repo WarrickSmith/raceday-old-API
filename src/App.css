@@ -11,7 +11,10 @@ There are four main css containers contained within the 'body' container:
   --background: rgb(68, 65, 65);
   --primary: rgb(32, 32, 36);
   --textColour: rgb(236, 230, 230);
+  --textColour2: rgb(242, 245, 98);
   --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  --radius: 1vh;
+  --rowMargin: 0.5vh;
 }
 
 /* Remove default padding and margin on all elements */
@@ -30,7 +33,7 @@ body {
   display: grid;
   box-sizing: border-box;
   padding: 1%;
-  grid-template-rows: 0.75fr 2fr 5fr 2fr;
+  grid-template-rows: 0.5fr 1.5fr 5fr 1.5fr;
   grid-gap: 1% 1%;
   font-family: Helvetica, Arial, sans-serif;
   background-color: var(--background);
@@ -69,7 +72,7 @@ body {
   }
 
   .races {
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1.5fr 2fr 1fr;
   }
 
   .results {

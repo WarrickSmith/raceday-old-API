@@ -27,11 +27,11 @@
 }
 .button-minus {
   font-size: 1vh;
-  border-radius: 1.5vh 0 0 1.5vh;
+  border-radius: var(--radius) 0 0 var(--radius);
 }
 .button-plus {
   font-size: 1vh;
-  border-radius: 0 1.5vh 1.5vh 0;
+  border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 /* Media breakpoint for screen widths larger then average mobile screen */

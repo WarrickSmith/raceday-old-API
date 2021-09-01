@@ -1,0 +1,36 @@
+.show-runners {
+  display: grid;
+  grid-template-columns: 2.5fr 1.5fr;
+  grid-gap: 1vh;
+  margin: 1vh;
+}
+
+.dividends {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.runners,
+.dividends {
+  color: var(--textColour);
+  background-color: var(--background);
+  font-size: small;
+  border-radius: var(--radius);
+  padding: 1vh;
+}
+
+.runners ol,
+.dividends ol {
+  list-style-type: none;
+}
+
+.runner-margin {
+  margin: 0 0 var(--rowMargin) 0;
+  text-indent: 10%;
+  color: var(--textColour2);
+}
+
+.div-margin {
+  margin: 0 0 var(--rowMargin) 0;
+  text-indent: 10%;
+  color: var(--textColour);
+}

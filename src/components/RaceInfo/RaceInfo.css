@@ -7,7 +7,7 @@
 .show-raceinfo-detail {
   color: var(--textColour);
   background-color: var(--background);
-  border-radius: 1.5vh 1.5vh;
+  border-radius: var(--radius);
   padding: 1vh;
 }
 
