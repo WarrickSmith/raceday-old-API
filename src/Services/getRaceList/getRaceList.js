@@ -11,7 +11,7 @@ const getRaceList = (raceMeetings) => {
     return time;
   };
 
-  console.log(`getRaceList Function Executing....`, raceMeetings);
+  console.log(`getRaceList Function Executing....`);
   let newRaceList = [];
   for (const meeting of raceMeetings) {
     const races = meeting.Races;
@@ -41,7 +41,6 @@ const getRaceList = (raceMeetings) => {
     const d = new Date(b.RaceTime);
     return c - d;
   });
-  console.log(`RaceList: `, raceList);
   return raceList;
 };
 

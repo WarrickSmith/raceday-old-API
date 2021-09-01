@@ -7,7 +7,7 @@ const ShowRunners = ({ currentRaceData }) => {
 
   if (currentRaceData !== null) {
     race = currentRaceData;
-    console.log(`Final Race Data!!: `, race);
+    console.log(`Final Race Data returned from getRunners: `, race);
   }
 
   return (
