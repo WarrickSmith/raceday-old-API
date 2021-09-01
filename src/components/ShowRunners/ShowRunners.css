@@ -1,6 +1,6 @@
 .show-runners {
   display: grid;
-  grid-template-columns: 2.5fr 1.5fr;
+  grid-template-columns: 2.5fr 2fr;
   grid-gap: 1vh;
   margin: 1vh;
 }
@@ -31,6 +31,5 @@
 
 .div-margin {
   margin: 0 0 var(--rowMargin) 0;
-  text-indent: 10%;
   color: var(--textColour);
 }
