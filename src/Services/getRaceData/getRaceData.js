@@ -14,7 +14,7 @@ const getRaceData = async (raceString, newRaceMeetings) => {
       const newRacedata = await response.json();
       raceData.push(newRacedata.RaceDay.Meetings[0]);
     }
-    console.log(`raceData Fetched`, raceData);
+    console.log(`raceData Fetched - Includes Runners Data`, raceData);
     return raceData;
   } catch (error) {
     alert(

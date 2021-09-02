@@ -5,7 +5,7 @@ const getRaceMeetings = async (raceString) => {
       `https://api.tatts.com/svc/sales/vmax/web/data/racing${raceString}`
     );
     const newRaceday = await response.json();
-    console.log(`RaceDay Data Fetched: `, newRaceday);
+    console.log(`RaceDay Meetings Fetched: `, newRaceday);
     return newRaceday;
   } catch (error) {
     alert(
