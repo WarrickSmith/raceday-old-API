@@ -17,7 +17,7 @@ const ShowRunners = ({ currentRaceData }) => {
         {currentRaceData && (
           <ol id='runner' name='runner'>
             {race.Runners.map((runner, index) => (
-              <li key={index + runner.RunnerName}>
+              <li className='li-margin' key={index + runner.RunnerName}>
                 <div>
                   {runner.RunnerNumber} &nbsp; {runner.RunnerName}
                 </div>
@@ -35,8 +35,8 @@ const ShowRunners = ({ currentRaceData }) => {
           {currentRaceData && (
             <ol id='win' name='win'>
               {race.Runners.map((runner, index) => (
-                <li key={index + runner.RunnerName}>
-                  <div className='div-margin'>$ {runner.WinOdds}</div>
+                <li className='li-margin' key={index + runner.RunnerName}>
+                  <div>$ {runner.WinOdds}</div>
                   <br />
                 </li>
               ))}
@@ -48,8 +48,8 @@ const ShowRunners = ({ currentRaceData }) => {
           {currentRaceData && (
             <ol id='place' name='place'>
               {race.Runners.map((runner, index) => (
-                <li key={index + runner.RunnerName}>
-                  <div className='div-margin'>$ {runner.PlaceOdds}</div>
+                <li className='li-margin' key={index + runner.RunnerName}>
+                  <div>$ {runner.PlaceOdds}</div>
                   <br />
                 </li>
               ))}

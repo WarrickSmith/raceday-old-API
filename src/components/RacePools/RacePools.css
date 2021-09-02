@@ -1,16 +1,12 @@
-.show-runners {
+.race-pools {
   display: grid;
-  grid-template-columns: 2.5fr 2fr;
+  grid-template-columns: 2.5fr 1fr;
   grid-gap: 1vh;
   margin: 1vh;
 }
 
-.dividends {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.runners,
-.dividends {
+.pool,
+.pool-total {
   color: var(--textColour);
   background-color: var(--background);
   font-size: small;
@@ -18,16 +14,12 @@
   padding: 1vh;
 }
 
-.runners ol,
-.dividends ol {
+.race-pools ol,
+.pool-total ol {
   list-style-type: none;
 }
 
-.li-margin {
+.race-pools li,
+.pool-total li {
   margin: var(--rowMargin) 0 0 0;
-}
-
-.runner-margin {
-  text-indent: 10%;
-  color: var(--textColour2);
 }
