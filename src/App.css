@@ -33,7 +33,7 @@ body {
   display: grid;
   box-sizing: border-box;
   padding: 1%;
-  grid-template-rows: 0.4fr 1.35fr 5fr 1.75fr;
+  grid-template-rows: 0.4fr 1.35fr 5fr 2fr;
   grid-gap: 1% 1%;
   font-family: Helvetica, Arial, sans-serif;
   background-color: var(--background);
