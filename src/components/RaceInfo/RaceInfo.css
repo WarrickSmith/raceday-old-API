@@ -2,6 +2,7 @@
   display: grid;
   grid-gap: 1vh;
   margin: 1vh;
+  overflow-x: clip;
 }
 .show-raceinfo-title,
 .show-raceinfo-detail {
@@ -9,6 +10,12 @@
   background-color: var(--background);
   border-radius: var(--radius);
   padding: 1vh;
+  overflow-x: clip;
+}
+
+.show-raceinfo-title h2 {
+  white-space: nowrap;
+  color: var(--textColour2);
 }
 
 .show-raceinfo-detail {
