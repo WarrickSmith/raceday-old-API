@@ -12,7 +12,7 @@
 }
 
 .race-select-textbox {
-  font-size: 1.5vh;
+  /* font-size: 1.5vh; */
   border-radius: 1.5vh;
 }
 
@@ -23,30 +23,30 @@
 }
 
 .button-next {
-  font-size: 1vh;
+  /* font-size: 1vh; */
 }
 .button-minus {
-  font-size: 1vh;
+  /* font-size: 1vh; */
   border-radius: var(--radius) 0 0 var(--radius);
 }
 .button-plus {
-  font-size: 1vh;
+  /* font-size: 1vh; */
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 /* Media breakpoint for screen widths larger then average mobile screen */
 @media only screen and (min-width: 38rem) {
   .race-select-textbox {
-    font-size: 1.5vw;
+    /* font-size: 1.5vw; */
   }
 
   .button-next {
-    font-size: 1vw;
+    /* font-size: 1vw; */
   }
   .button-minus {
-    font-size: 1vw;
+    /* font-size: 1vw; */
   }
   .button-plus {
-    font-size: 1vw;
+    /* font-size: 1vw; */
   }
 }
