@@ -6,8 +6,9 @@ const ShowRunners = ({ currentRaceData }) => {
   let race = [];
 
   if (currentRaceData !== null) {
-    race = currentRaceData;
+    race = currentRaceData.Runners;
     console.log(`Final Race Data returned from getRunners: `, race);
+    race.sort((a, b) => (a.WinOdds > b.WinOdds ? 1 : -1));
   }
 
   return (
@@ -16,7 +17,7 @@ const ShowRunners = ({ currentRaceData }) => {
         <h2>Runner</h2>
         {currentRaceData && (
           <ol id='runner' name='runner'>
-            {race.Runners.map((runner, index) => (
+            {race.map((runner, index) => (
               <li className='li-margin' key={index + runner.RunnerName}>
                 <div>
                   {runner.RunnerNumber} &nbsp; {runner.RunnerName}
@@ -34,7 +35,7 @@ const ShowRunners = ({ currentRaceData }) => {
           <h2>Win</h2>
           {currentRaceData && (
             <ol id='win' name='win'>
-              {race.Runners.map((runner, index) => (
+              {race.map((runner, index) => (
                 <li className='li-margin' key={index + runner.RunnerName}>
                   <div>$ {runner.WinOdds}</div>
                   <br />
@@ -47,7 +48,7 @@ const ShowRunners = ({ currentRaceData }) => {
           <h2>Plc</h2>
           {currentRaceData && (
             <ol id='place' name='place'>
-              {race.Runners.map((runner, index) => (
+              {race.map((runner, index) => (
                 <li className='li-margin' key={index + runner.RunnerName}>
                   <div>$ {runner.PlaceOdds}</div>
                   <br />
