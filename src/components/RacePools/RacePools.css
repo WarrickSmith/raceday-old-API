@@ -9,7 +9,6 @@
 .pool-total {
   color: var(--textColour);
   background-color: var(--background);
-  /* font-size: small; */
   border-radius: var(--radius);
   padding: 1vh;
 }
