@@ -9,6 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 .runners,
 .dividends {
   color: var(--textColour);
@@ -24,9 +25,15 @@
 
 .li-margin {
   margin: var(--rowMargin) 0 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .runner-margin {
   text-indent: 10%;
   color: var(--textColour2);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
