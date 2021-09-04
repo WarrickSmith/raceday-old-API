@@ -24,19 +24,31 @@ const RaceResults = ({ currentRaceData }) => {
         )}
       </div>
       <div className='result-dividend'>
-        <h2>Win &nbsp;&nbsp;/&nbsp;&nbsp; Plc</h2>
-        {isResults && (
-          <ol id='result-dividend' name='result-dividend'>
-            {currentRaceData.Results.map((result, index) => (
-              <li key={index + result.RunnerName}>
-                <div>
-                  $ {result.WinOdds} &nbsp;&nbsp;&nbsp;&nbsp; /
-                  &nbsp;&nbsp;&nbsp;&nbsp; $ {result.PlaceOdds}
-                </div>
-              </li>
-            ))}
-          </ol>
-        )}
+        <div>
+          <h2>Win</h2>
+          {isResults && (
+            <ol id='result-winDividend' name='result-winDividend'>
+              {currentRaceData.Results.map((result, index) => (
+                <li className='li-margin' key={index + result.RunnerName}>
+                  <div>$ {result.WinOdds}</div>
+                </li>
+              ))}
+            </ol>
+          )}
+        </div>
+        <div>
+          <h2>Plc</h2>
+          {isResults && (
+            <ol id='result-plcDividend' name='result-plcDividend'>
+              {currentRaceData.Results.map((result, index) => (
+                <li className='li-margin' key={index + result.RunnerName}>
+                  <div>$ {result.PlaceOdds}</div>
+                </li>
+              ))}
+            </ol>
+          )}
+        </div>
+        <div></div>
       </div>
     </div>
   );

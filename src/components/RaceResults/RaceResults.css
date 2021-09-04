@@ -1,8 +1,13 @@
 .race-results {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 0.5fr 0.5fr;
   grid-gap: 1vh;
   margin: 1vh;
+}
+
+.result-dividend {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .race-result,
