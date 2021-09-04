@@ -1,4 +1,4 @@
-// Function to display Race Pool Information for the currently selected race. The function is passed the current race information object (currentRaceData) and the Pools data is extracted and displayed from the object. Pools are: Win, Place, Quinella, Trifecta, First Four, Duet and Exacta,
+// Function to display Race Pool Information for the currently selected race. The function is passed the current race information object (currentRaceData) and the Pools data is extracted and displayed from the object. Pools are: Win, Place, Quinella, Trifecta, First Four, Duet and Exacta.
 
 import './RacePools.css';
 

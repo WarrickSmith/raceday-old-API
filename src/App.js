@@ -14,6 +14,7 @@ import SessionStatus from './components/SessionStatus/SessionStatus';
 import getRunners from './Services/getRunners/getRunners';
 import ShowRunners from './components/ShowRunners/ShowRunners';
 import RacePools from './components/RacePools/RacePools';
+import RaceResults from './components/RaceResults/RaceResults';
 
 function App() {
   // define application hooks
@@ -88,7 +89,9 @@ function App() {
         <div>
           <RacePools currentRaceData={currentRaceData} />
         </div>
-        <div>Race Results</div>
+        <div>
+          <RaceResults currentRaceData={currentRaceData} />
+        </div>
         <div>
           <p>Race Status</p>
           <button onClick={loadData}>Reload Data</button>

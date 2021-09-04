@@ -1,0 +1,24 @@
+.race-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1vh;
+  margin: 1vh;
+}
+
+.race-result,
+.result-dividend {
+  color: var(--textColour);
+  background-color: var(--background);
+  border-radius: var(--radius);
+  padding: 1vh;
+}
+
+.race-result ol,
+.result-dividend ol {
+  list-style-type: none;
+}
+
+.race-result li,
+.result-dividend li {
+  margin: var(--rowMargin) 0 0 0;
+}
