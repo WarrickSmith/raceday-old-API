@@ -9,21 +9,21 @@ const RaceInfo = ({ raceList, currentRace, currentRaceData }) => {
         <h2 className='show-raceinfo-title'>Loading Race Info...</h2>
       </div>
     );
-  } else console.log(`RaceName: `, currentRaceData.RaceName);
-  return (
-    <div className='show-raceinfo'>
-      <div className='show-raceinfo-title'>
-        <h2>{currentRaceData.RaceName}</h2>
+  } else
+    return (
+      <div className='show-raceinfo'>
+        <div className='show-raceinfo-title'>
+          <h2>{currentRaceData.RaceName}</h2>
+        </div>
+        <div className='show-raceinfo-detail'>
+          <h3>RACE DISTANCE - {currentRaceData.Distance}</h3>
+          <h3>STATUS - {currentRaceData.Status}</h3>
+          <h3>WEATHER - {currentRaceData.WeatherCondition.toUpperCase()}</h3>
+          <h3>
+            TRACK CONDITION - {currentRaceData.TrackCondition.toUpperCase()}
+          </h3>
+        </div>
       </div>
-      <div className='show-raceinfo-detail'>
-        <h3>RACE DISTANCE - {currentRaceData.Distance}</h3>
-        <h3>STATUS - {currentRaceData.Status}</h3>
-        <h3>WEATHER - {currentRaceData.WeatherCondition.toUpperCase()}</h3>
-        <h3>
-          TRACK CONDITION - {currentRaceData.TrackCondition.toUpperCase()}
-        </h3>
-      </div>
-    </div>
-  );
+    );
 };
 export default RaceInfo;

@@ -3,6 +3,7 @@
 import './RacePools.css';
 
 const RacePools = ({ currentRaceData }) => {
+  console.log(`RacePools Element Loading...`);
   let poolArray = [];
 
   if (currentRaceData) {
@@ -37,9 +38,7 @@ const RacePools = ({ currentRaceData }) => {
       poolArray = [...poolArray, object];
     }
   }
-  poolArray.map((pool) => console.log(pool));
 
-  console.log(`RacePools: `, currentRaceData);
   return (
     <div className='race-pools'>
       <div className='pool'>
