@@ -37,10 +37,6 @@ function App() {
   };
 
   const reFreshData = async () => {
-    // setRaceString(getDateString(new Date()));
-    // const newRaceMeetings = await getRaceMeetings(raceString);
-    // const updateRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
-    // setRaceList(updateRaceList);
     const newRaceData = await getRaceData(raceString, raceMeetings);
     setRaceData(newRaceData);
   };
@@ -79,7 +75,11 @@ function App() {
           />
         </div>
         <div>
-          <RaceInfo raceList={raceList} currentRace={currentRace} />
+          <RaceInfo
+            raceList={raceList}
+            currentRace={currentRace}
+            currentRaceData={currentRaceData}
+          />
         </div>
         <div>
           <SessionStatus />
