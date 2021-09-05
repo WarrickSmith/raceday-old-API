@@ -1,0 +1,13 @@
+.loaddata {
+  display: grid;
+  grid-gap: 1vh;
+  margin: 1vh;
+  justify-items: center;
+}
+
+.data-button {
+  color: var(--textColour);
+  background-color: var(--background);
+  border-radius: var(--radius);
+  padding: 1vh;
+}

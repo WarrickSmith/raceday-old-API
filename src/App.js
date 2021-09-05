@@ -14,9 +14,11 @@ import getRunners from './Services/getRunners/getRunners';
 import ShowRunners from './components/ShowRunners/ShowRunners';
 import RacePools from './components/RacePools/RacePools';
 import RaceResults from './components/RaceResults/RaceResults';
+import LoadData from './components/LoadData/LoadData';
 
 function App() {
   // define application hooks
+  const [raceMeetings, setRaceMeetings] = useState(null);
   const [raceData, setRaceData] = useState(null);
   const [raceString, setRaceString] = useState(getDateString(new Date()));
   const [raceList, setRaceList] = useState(null);
@@ -27,9 +29,19 @@ function App() {
   const loadData = async () => {
     setRaceString(getDateString(new Date()));
     const newRaceMeetings = await getRaceMeetings(raceString);
+    setRaceMeetings(newRaceMeetings);
     const updateRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
     setRaceList(updateRaceList);
     const newRaceData = await getRaceData(raceString, newRaceMeetings);
+    setRaceData(newRaceData);
+  };
+
+  const reFreshData = async () => {
+    // setRaceString(getDateString(new Date()));
+    // const newRaceMeetings = await getRaceMeetings(raceString);
+    // const updateRaceList = getRaceList(newRaceMeetings.RaceDay.Meetings);
+    // setRaceList(updateRaceList);
+    const newRaceData = await getRaceData(raceString, raceMeetings);
     setRaceData(newRaceData);
   };
 
@@ -92,8 +104,7 @@ function App() {
           <RaceResults currentRaceData={currentRaceData} />
         </div>
         <div>
-          <p>Race Status</p>
-          <button onClick={loadData}>Reload Data</button>
+          <LoadData reFreshData={reFreshData} loadData={loadData} />
         </div>
       </div>
     </div>
