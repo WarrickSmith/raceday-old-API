@@ -10,7 +10,7 @@ const RaceResults = ({ currentRaceData }) => {
   return (
     <div className='race-results'>
       <div className='race-result'>
-        <h2>Result (barrier)</h2>
+        <h2>Result (runner number)</h2>
         {isResults && (
           <ol id='race-result' name='race-result'>
             {currentRaceData.Results.map((result, index) => (
