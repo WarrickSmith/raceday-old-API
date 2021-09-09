@@ -16,12 +16,13 @@ const RaceSelector = ({
   // Event handler for selecting different race from dropdown list
   const handleOnChange = (event) => {
     console.log(`A change has been detected!`);
+    console.log(`event.target.value: `, event.target.value);
     setCurrentRace(event.target.value);
   };
 
   // Event handler for clicking on 'NEXT SCHEDULED RACE'
   const handleOnClick = () => {
-    console.log(`A change has been detected!`);
+    console.log(`A click event has been detected!`);
     setCurrentRace(getNextRace(raceList));
   };
 

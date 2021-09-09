@@ -1,29 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
 
-import PageHeader from './components/PageHeader/PageHeader';
-import RaceSelector from './components/RaceSelector/RaceSelector';
-import getRaceMeetings from './Services/getRaceMeetings/getRaceMeetings.js';
-import getRaceData from './Services/getRaceData/getRaceData';
-import getRaceList from './Services/getRaceList/getRaceList';
-import RaceInfo from './components/RaceInfo/RaceInfo';
-import getDateString from './Services/getDateString/getDateString';
-import getNextRace from './Services/getNextRace/getNextRace';
-import SessionStatus from './components/SessionStatus/SessionStatus';
-import getRunners from './Services/getRunners/getRunners';
-import ShowRunners from './components/ShowRunners/ShowRunners';
-import RacePools from './components/RacePools/RacePools';
-import RaceResults from './components/RaceResults/RaceResults';
-import LoadData from './components/LoadData/LoadData';
+import PageHeader from "./components/PageHeader/PageHeader";
+import RaceSelector from "./components/RaceSelector/RaceSelector";
+import getRaceMeetings from "./Services/getRaceMeetings/getRaceMeetings.js";
+import getRaceData from "./Services/getRaceData/getRaceData";
+import getRaceList from "./Services/getRaceList/getRaceList";
+import RaceInfo from "./components/RaceInfo/RaceInfo";
+import getDateString from "./Services/getDateString/getDateString";
+import getNextRace from "./Services/getNextRace/getNextRace";
+import SessionStatus from "./components/SessionStatus/SessionStatus";
+import getRunners from "./Services/getRunners/getRunners";
+import ShowRunners from "./components/ShowRunners/ShowRunners";
+import RacePools from "./components/RacePools/RacePools";
+import RaceResults from "./components/RaceResults/RaceResults";
+import LoadData from "./components/LoadData/LoadData";
 
 function App() {
   // define application hooks
-  const [raceMeetings, setRaceMeetings] = useState(null);
-  const [raceData, setRaceData] = useState(null);
-  const [raceString, setRaceString] = useState(getDateString(new Date()));
-  const [raceList, setRaceList] = useState(null);
-  const [currentRace, setCurrentRace] = useState(0);
-  const [currentRaceData, setCurrentRaceData] = useState(null);
+  const [raceMeetings, setRaceMeetings] = useState(() => {
+    return null;
+  });
+  const [raceData, setRaceData] = useState(() => {
+    return null;
+  });
+  const [raceString, setRaceString] = useState(() => {
+    return getDateString(new Date());
+  });
+  const [raceList, setRaceList] = useState(() => {
+    return null;
+  });
+  const [currentRace, setCurrentRace] = useState(() => {
+    return 0;
+  });
+  const [currentRaceData, setCurrentRaceData] = useState(() => {
+    return null;
+  });
 
   //Initiate initial data load (one time - on page load)
   const loadData = async () => {
@@ -63,7 +75,7 @@ function App() {
   return (
     <div className='container'>
       <div className='header'>
-        <PageHeader title={'RaceDay'} />
+        <PageHeader title={"RaceDay"} />
       </div>
       <div className='raceday'>
         <div>

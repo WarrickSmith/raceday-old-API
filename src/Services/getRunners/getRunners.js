@@ -3,7 +3,9 @@
 const getRunners = (raceList, currentRace, raceData) => {
   console.log(
     `**** getRunners Function Called... Fetching Runners for Current Race:`,
-    currentRace
+    currentRace,
+    raceList,
+    raceData
   );
   // raceNumber is the number of the race at the meeting, ie, Race '3' @ Randwick
   const raceNumber = raceList[currentRace].RaceNumber;
