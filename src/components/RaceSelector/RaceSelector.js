@@ -3,7 +3,7 @@
   and a function to return the race number of the next scheduled race. 
   The RaceSelector element populates a selectable list of races with the first race as the default. Clicking on 'Next Scheduled Race' invokes the getNextRace onClick event handler and resulting race index value is passed to setCurrentRace to update the currentRace state. If a race is selected from the the list of races dropdown, then the onChange event handler is envoked to update the currentRace by passing the seleced race target value to setCurrentRace. */
 
-import './RaceSelector.css';
+import "./RaceSelector.css";
 
 const RaceSelector = ({
   raceList,
@@ -28,8 +28,7 @@ const RaceSelector = ({
   // Event handler for clicking on '<<' decrease race by one
   const handleOnClickMinus = () => {
     if (currentRace > 0) {
-      currentRace--;
-      setCurrentRace(currentRace);
+      setCurrentRace((prevCount) => prevCount - 1);
     }
   };
 
@@ -37,8 +36,7 @@ const RaceSelector = ({
   const handleOnClickPlus = () => {
     const numberOfRaces = raceList.length;
     if (currentRace < numberOfRaces - 1) {
-      currentRace++;
-      setCurrentRace(currentRace);
+      setCurrentRace((prevCount) => prevCount + 1);
     }
   };
 
