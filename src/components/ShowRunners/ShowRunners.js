@@ -1,11 +1,23 @@
 /* This function (Component) takes in an array of current race data with details of one specific race and the runners in that race. It then returns an element with race Runner information */
-import './ShowRunners.css';
+import "./ShowRunners.css";
 
 const ShowRunners = ({ currentRaceData }) => {
   console.log(`ShowRunners Element Loading...`);
   let race = [];
 
-  if (currentRaceData !== null) {
+  if (currentRaceData == null || currentRaceData === undefined) {
+    return (
+      <div className='show-raceinfo'>
+        <h2 className='show-raceinfo-title'>Loading Runner Info...</h2>
+        <img
+          src={"loading.gif"}
+          alt={"loading placeholder"}
+          width={270}
+          height={270}
+        />
+      </div>
+    );
+  } else if (currentRaceData !== null) {
     race = currentRaceData.Runners;
     console.log(`Final Race Data returned from getRunners: `, race);
     race.sort((a, b) => (a.WinOdds > b.WinOdds ? 1 : -1));

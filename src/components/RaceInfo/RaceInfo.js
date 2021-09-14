@@ -1,5 +1,5 @@
 // Function to display Race Information for the currently selected race. A list of race meetings with races is parsed using currentRaceinfo to match meetingId and raceNumber. If a match is found, subsequent race informtion is then returned in the component.
-import './RaceInfo.css';
+import "./RaceInfo.css";
 
 const RaceInfo = ({ raceList, currentRace, currentRaceData }) => {
   console.log(`RaceInfo Element Loading...`);
@@ -7,6 +7,12 @@ const RaceInfo = ({ raceList, currentRace, currentRaceData }) => {
     return (
       <div className='show-raceinfo'>
         <h2 className='show-raceinfo-title'>Loading Race Info...</h2>
+        <img
+          src={"loading.gif"}
+          alt={"loading placeholder"}
+          width={70}
+          height={70}
+        />
       </div>
     );
   } else
