@@ -1,8 +1,8 @@
-const express = require("express");
-const app = express();
+// Create Server to'listen' for request enpoints that will be handled by 'app.js'
+
+const app = require("./app");
 const port = 5000;
 
-app.get("/", (req, res) => res.send("Hello World!"));
 app.listen(port, () =>
   console.log(`RaceDay server listening on port ${port}!`)
 );
