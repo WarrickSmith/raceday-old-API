@@ -1,70 +1,156 @@
-# Getting Started with Create React App
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="">
+    <img src="public/thlogo.jpg" alt="Logo" width="98" height="138">
+  </a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+  <h3 align="center">TOP HATS</h3>
 
-## Available Scripts
+  <p align="center">
+    Amazing designer hats for descerning individuals!
+    <br />
+    <br />
+    <br />
+  </p>
+</p>
 
-In the project directory, you can run:
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgements">Acknowledgements</a></li>
+  </ol>
+</details>
 
-### `npm start`
+<!-- ABOUT THE PROJECT -->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## About The Project
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![Product Name Screen Shot][product-screenshot]
 
-### `npm test`
+Top Hats is a fully function Designer Hats eCommerce website with product filtering, sorting and searching capability to enhance the user experience.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Electronic payment functionality has been achieved through leveraging secure third party payment gateway technology.
+The products catelog is maintained through a user-friendly product management system allowing easy addition and update of the exisiting Top Hat catlog.
 
-### `npm run build`
+### Built With
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Key frameworks and technologies used in this project are:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [React](https://reactjs.org/) - Main Code Base
+- [Jest](https://jestjs.io/) - Testing enviornment
+- [Node](https://nodejs.org/) - Testing enviornment
+- [Stripe.com](https://stripe.com) - CMS and Payments Infrustructure
+- [Begin.com](https://begin.com) - Secure API server. Stores private key
+- [Netlify](https://www.netlify.com/) - Web Site public hosting service
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<!-- GETTING STARTED -->
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To get a local copy of the project up and running follow these simple steps.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Prerequisites
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To see full project functionality you will need the following as a prerequsite:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+1. An account on stripe.com. This is to create and maintina your product catalog.
+2. An account on begin.com. - This is to enable secure API integration with the strip.com product catalog and payments gateway.
 
-## Learn More
+### Installation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Get a API Keys from stripe.com
+2. Clone the repo
+   ```sh
+   git clone https://github.com/your_username_/Project-Name.git
+   ```
+3. Install NPM packages
+   ```sh
+   npm install
+   ```
+4. Enter your stripe.com Public public in `.env.js`
+   ```JS
+   REACT_APP_STRIPE_PUBLIC_KEY=
+   ```
+5. log in to begin.com and enter your Secret Key from your stripe.com account.
+6. Enter your begin.com deployed url `.env.js`
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```JS
+   REACT_APP_API_URL=
+   ```
 
-### Code Splitting
+7. Log into stripe.com and add products that will be diplayed in the Top Hats shop catalog. Your must have a 'category' key.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<!-- USAGE EXAMPLES -->
 
-### Analyzing the Bundle Size
+## Usage
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+The Top Hats site will initially show featured products and then the first 6 products in the catelog. There is a close button to hide the featured products and page pagination at the bottom of the catelog to allow viewing more products.
 
-### Making a Progressive Web App
+Filter by category, Sort by and search product functionality is also included in a toolbar at the top of the screen to facilitate displaying products using a criteria.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Clicking a 'Buy now' button on either a featured product or catalog item will redirect the user to a third party payment provider and return them to Top Hats once the payment is complete.
 
-### Advanced Configuration
+A live version of the site has been deployed to: https://clever-knuth-5770a4.netlify.app/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+The products and prices json data can be viewed at begin.com:
 
-### Deployment
+- Products: https://design-hc3-staging.begin.app/products
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Prices: https://design-hc3-staging.begin.app/prices
 
-### `npm run build` fails to minify
+The Product Catalog can be viewed at:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- https://dashboard.stripe.com/test/products?active=true
+
+(Note: you will need to be invited as a team member and will need to create an account if you do not have one)
+
+<!-- ROADMAP -->
+
+## Roadmap
+
+Future functionaility will include ensuring thes earch functionality is not case sensative.
+
+<!-- CONTACT -->
+
+## Contact
+
+Should you have any questions, the project team members are:
+
+Warrick Smith - https://github.com/WarrickSmith
+
+Shaun McTeague - TBA
+
+Nelson Pinto - https://github.com/Nel2021
+
+Project Link: [https://github.com/Developers-Institute-Classrooms/01-project---online-shop---21t3-group-3-nelson-warrick-shaun]
+
+<!-- ACKNOWLEDGEMENTS -->
+
+## Acknowledgements
+
+- [Harvey Nicols for Product Inspiration](https://www.harveynichols.com/int/mens/all-accessories/hats/)
+- [favicon.io to geneate favicon.ico from a jpg](hhttps://favicon.io/favicon-converter/)
+- [tinypng.com for reducing image sizes](https://tinypng.com/)
+- [GitHub Pages](https://pages.github.com)
+
+[product-screenshot]: public/thhome.png
