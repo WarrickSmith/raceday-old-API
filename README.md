@@ -5,10 +5,10 @@
     <img src="public/thlogo.jpg" alt="Logo" width="98" height="138">
   </a>
 
-  <h3 align="center">TOP HATS</h3>
+  <h3 align="center">RaceDay Initial Release</h3>
 
   <p align="center">
-    Amazing designer hats for descerning individuals!
+    View Australian Horse Racing TAB Data
     <br />
     <br />
     <br />
