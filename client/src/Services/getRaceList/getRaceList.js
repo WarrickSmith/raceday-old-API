@@ -25,14 +25,16 @@ const getRaceList = (raceMeetings) => {
       newObject.RaceName = race.RaceName;
       newObject.RaceStatus = race.Status;
       newObject.RaceDistance = race.Distance;
-      race.hasOwnProperty('WeatherCondition')
+      race.hasOwnProperty("WeatherCondition")
         ? (newObject.RaceWeatherCondition = race.WeatherCondition)
-        : (newObject.RaceWeatherCondition = 'Not Reported');
-      race.hasOwnProperty('TrackCondition')
+        : (newObject.RaceWeatherCondition = "Not Reported");
+      race.hasOwnProperty("TrackCondition")
         ? (newObject.RaceTrackCondition = race.TrackCondition)
-        : (newObject.RaceTrackCondition = 'Not Reported');
+        : (newObject.RaceTrackCondition = "Not Reported");
       newObject.RaceTime = nswTime(new Date(race.RaceTime));
-      newRaceList.push(newObject);
+      if (newObject.MeetingType !== "G") {
+        newRaceList.push(newObject);
+      }
     }
   }
   // Sort racelist ascending by RaceTime
